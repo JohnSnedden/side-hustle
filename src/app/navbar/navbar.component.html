@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   
   <!-- menu button on lhs of toolbar toggles display of sidenav -->
-  <button mat-icon-button>
+  <button mat-icon-button *ngIf="auth.user">
   <!-- <button mat-icon-button (click)="sidenav.toggle()"> -->
     <mat-icon>menu</mat-icon>
   </button>
@@ -11,14 +11,15 @@
   <span>Side Hustle</span>
 
   <span class="example-fill-remaining-space"></span>
-  <button mat-icon-button [mat-menu-trigger-for]="menu">
+  
+  <button mat-icon-button *ngIf="auth.user" [mat-menu-trigger-for]="accountMenu">
     <mat-icon>account_circle</mat-icon>
   </button>
 </mat-toolbar>
 
 <!-- user profile icon menu options -->
-<mat-menu x-position="before" #menu="matMenu">
+<mat-menu x-position="before" #accountMenu="matMenu">
   <button mat-menu-item>Change Password</button>
-  <button mat-menu-item>Sign Out</button>
+  <button mat-menu-item (click)="signOut()">Sign Out</button>
 </mat-menu>
 
