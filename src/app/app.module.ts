@@ -14,6 +14,7 @@ import { AuthService } from './auth/auth.service';
 import { SignoutComponent } from './auth/signout/signout.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ChangepwComponent } from './auth/changepw/changepw.component';
+import { SnackbarService } from './shared/snackbar.service';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { ChangepwComponent } from './auth/changepw/changepw.component';
     SigninComponent,
     SignoutComponent,
     SignupComponent,
-    ChangepwComponent
+    ChangepwComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,10 @@ import { ChangepwComponent } from './auth/changepw/changepw.component';
     MaterialModule,
     BrowserAnimationsModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    SnackbarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

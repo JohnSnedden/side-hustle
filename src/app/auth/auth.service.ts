@@ -5,13 +5,15 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { environment } from '../../environments/environment';
+import { SnackbarService } from '../shared/snackbar.service';
 
 @Injectable()
 export class AuthService {
   user: any;
 
   constructor(
-    private http: Http
+    private http: Http,
+    private snackbarService: SnackbarService
   ) { }
 
   getUserToken() {
@@ -39,7 +41,10 @@ export class AuthService {
           // Send the existing credentials back to the server to log in the new user
           this.signIn(credentials.credentials.email, credentials.credentials.password);
         },
-        err => console.log(err)
+        err => {
+          console.log(err);
+          this.snackbarService.showSnackBar('Sign up error');
+        }
       );
   }
 
@@ -56,8 +61,14 @@ export class AuthService {
     this.http.post(environment.apiServer + '/sign-in', credentials)
       .subscribe(
         // Save the response to user
-        response => this.user = JSON.parse(response['_body']).user,
-        err => console.log(err)
+        response => {
+          this.user = JSON.parse(response['_body']).user;
+          this.snackbarService.showSnackBar('Sign in successful!');
+        },
+        err => {
+          console.log(err);
+          this.snackbarService.showSnackBar('Sign in error');
+        }
       );
       console.log('in auth.services signIn ', this.user);
   }
@@ -80,8 +91,14 @@ export class AuthService {
     // Make the patch request to URL, add the password data and token from Config.
     this.http.patch(environment.apiServer + '/change-password/' + this.user.id, passwords, config)
       .subscribe(
-        data => console.log('Success'),
-        err => console.log(err)
+        data => {
+          console.log('Success');
+          this.snackbarService.showSnackBar('Password changed!');
+        },
+        err => {
+          console.log(err);
+          this.snackbarService.showSnackBar('Error changing password');
+        }
       );
   }
 
@@ -95,9 +112,15 @@ export class AuthService {
     this.http.delete(environment.apiServer + '/sign-out/' + this.user.id, config)
       .subscribe(
         // Remove the logged in user.
-        data => this.user = null,
-        err => console.log(err)
+        data => {
+          this.user = null;
+          this.snackbarService.showSnackBar('Sign out successful');
+        },
+        err => {
+          console.log(err);
+          this.snackbarService.showSnackBar('Sign out error');
+        }
       );
   }
-  
+
 }
