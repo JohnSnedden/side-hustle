@@ -15,6 +15,10 @@ import { SignoutComponent } from './auth/signout/signout.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ChangepwComponent } from './auth/changepw/changepw.component';
 import { SnackbarService } from './shared/snackbar.service';
+import { CompaniesComponent } from './companies/companies.component';
+import { CompanyIndexComponent } from './companies/company-index/company-index.component';
+import { CompaniesService } from './companies/companies.service';
+import { CompanyEditComponent } from './companies/company-edit/company-edit.component';
 
 
 @NgModule({
@@ -26,6 +30,9 @@ import { SnackbarService } from './shared/snackbar.service';
     SignoutComponent,
     SignupComponent,
     ChangepwComponent,
+    CompaniesComponent,
+    CompanyIndexComponent,
+    CompanyEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,8 @@ import { SnackbarService } from './shared/snackbar.service';
   ],
   providers: [
     AuthService,
-    SnackbarService
+    SnackbarService,
+    CompaniesService,
   ],
   bootstrap: [AppComponent]
 })

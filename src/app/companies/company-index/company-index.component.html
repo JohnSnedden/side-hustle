@@ -1,0 +1,45 @@
+<mat-card>
+  <h2>Companies</h2>
+
+  <a class="btn" routerLink="/companies/new">Add Company</a>
+  <a class="btn" (click)="getAllCompanies()">Get Companies</a>
+  
+  <!-- <div class="companies">
+    <div class="row" *ngFor="let company of allCompanies">
+      <ul>
+        <li>
+          <h2>
+            <a routerLink="/companies/{{company.id}}">
+              {{company.name}}
+              </a>
+          </h2>
+        </li>
+        <li>
+          <a routerLink="/companies/edit/{{company.id}}">
+            Edit
+            </a>
+        </li>
+        <li>
+          <form (ngSubmit)="deleteCompany(company)">
+            <input type="submit" value="Delete"/>
+            </form>
+        </li>
+      </ul>
+    </div>
+  </div>   
+</mat-card> -->
+
+<br>
+
+<mat-card>
+  <mat-list>
+    <h3 mat-subheader>Companies</h3>
+    <mat-list-item *ngFor="let company of allCompanies">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <h4 mat-line>{{company.name}}</h4>
+      <p mat-line> {{company.city}}, {{company.province}}, {{company.postal_code}} </p>
+      <button mat-raised-button color="primary">edit</button>
+      <!-- <button mat-raised-button color="warn">delete</button> -->
+    </mat-list-item>
+  </mat-list>
+</mat-card>
