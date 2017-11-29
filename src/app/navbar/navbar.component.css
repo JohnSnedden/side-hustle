@@ -1,0 +1,4 @@
+ /* Enables correct spacing on the items in the toolbar */
+ .example-fill-remaining-space {
+    flex: 1 1 auto;
+  }
