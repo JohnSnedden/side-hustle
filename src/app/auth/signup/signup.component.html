@@ -1,7 +1,40 @@
-<div class="container">
-  <h3>Sign Up</h3>
-  <input [(ngModel)]="newUser.email" type="text" placeholder="Email"/>
-  <input [(ngModel)]="newUser.password" type="password" placeholder="Password"/>
-  <input [(ngModel)]="newUser.password_confirmation" type="password" placeholder="Confirm Passsword"/>
-  <input (click)="signUp()" type="submit" value="Sign Up"/>
-</div>
+<mat-card>
+  <div class="container">
+    <h3>Sign Up</h3>
+
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="newUser.email" type="text" placeholder="Email"/>
+      </mat-form-field>
+    </div>
+    
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="newUser.password" type="password" placeholder="Password"/>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput [(ngModel)]="newUser.password_confirmation" type="password" placeholder="Confirm Passsword"/>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button color="primary" (click)="signUp()">Sign up</button>
+      <!-- <input (click)="signUp()" type="submit" value="Sign Up"/> -->
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div>
+      Existing user?
+    </div>
+    <br>
+    <button mat-raised-button color="link" routerLink="/login">Sign in</button>
+
+  </div>  
+</mat-card>
+

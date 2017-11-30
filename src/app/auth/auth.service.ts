@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { environment } from '../../environments/environment';
 import { SnackbarService } from '../shared/snackbar.service';
@@ -13,7 +15,9 @@ export class AuthService {
 
   constructor(
     private http: Http,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    private router: Router,
+    private location: Location,
   ) { }
 
   getUserToken() {
@@ -64,6 +68,7 @@ export class AuthService {
         response => {
           this.user = JSON.parse(response['_body']).user;
           this.snackbarService.showSnackBar('Sign in successful!');
+          this.router.navigate(['/home']);
         },
         err => {
           console.log(err);
@@ -94,6 +99,7 @@ export class AuthService {
         data => {
           console.log('Success');
           this.snackbarService.showSnackBar('Password changed!');
+          this.location.back();
         },
         err => {
           console.log(err);
@@ -115,6 +121,7 @@ export class AuthService {
         data => {
           this.user = null;
           this.snackbarService.showSnackBar('Sign out successful');
+          this.router.navigate(['/login']);
         },
         err => {
           console.log(err);

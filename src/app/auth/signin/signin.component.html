@@ -1,12 +1,41 @@
-<div class="container">
-  <h3>Sign In</h3>
-  <input [(ngModel)]="user.email" type="text" placeholder="Email"/>
-  <input [(ngModel)]="user.password" type="password" placeholder="Password"/>
-  <input (click)="signIn()" type="submit" value="Sign in"/>
+<mat-card>
+  <div class="container">
+    <h3>Sign In</h3>
+    
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="user.email" type="text" placeholder="Email"/>
+      </mat-form-field>
+    </div>
+    
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="user.password" type="password" placeholder="Password"/>
+      </mat-form-field>
+    </div>
+    
+    <div>
+      <!-- <input matInput (click)="signIn()" type="submit" value="Sign in"/> -->
+      <button mat-raised-button color="primary" (click)="signIn()">Sign in</button>
+    </div>
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div>
+      New user?
+    </div>
+    <br>
+    <button mat-raised-button color="link" routerLink="/signup">Sign up</button>
+    
+    <!-- <div *ngIf="auth.user" class="container">I see a user!!! <strong>{{auth.user.email}}</strong></div> -->
+    
+  </div>
+</mat-card>
 
-  <div *ngIf="auth.user" class="container">I see a user!!! <strong>{{auth.user.email}}</strong></div>
-
-</div>
 
 <!-- <div class="container">
 

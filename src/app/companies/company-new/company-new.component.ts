@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompaniesService } from '../companies.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-company-new',
@@ -13,7 +14,8 @@ export class CompanyNewComponent implements OnInit {
 
     constructor(
       private companiesService: CompaniesService,
-      private router: Router
+      private router: Router,
+      private location: Location,
     ) { }
 
     ngOnInit() {
@@ -28,6 +30,10 @@ export class CompanyNewComponent implements OnInit {
         const company = response.json();
         this.router.navigate(['/companies/' + company.company.id]);
       });
+    }
+
+    goBack(): void {
+      this.location.back();
     }
 
 }

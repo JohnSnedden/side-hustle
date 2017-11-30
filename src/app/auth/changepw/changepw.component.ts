@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-changepw',
@@ -13,7 +14,8 @@ export class ChangepwComponent implements OnInit {
   newPassword: string;
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private location: Location,
   ) { }
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class ChangepwComponent implements OnInit {
   changePassword() {
     this.auth.changePassword(this.oldPassword, this.newPassword);
     this.oldPassword = this.newPassword = '';
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

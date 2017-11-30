@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AuthRoutingModule } from './auth/auth-routing.module';
 import { CompaniesRoutingModule } from './companies/companies-routing.module';
 
 import { AppComponent } from './app.component';
@@ -43,6 +44,7 @@ import { HomeComponent } from './home/home.component';
     MaterialModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AuthRoutingModule,
     CompaniesRoutingModule,
     CompaniesModule,
   ],
