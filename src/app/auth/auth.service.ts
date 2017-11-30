@@ -9,7 +9,6 @@ import { Location } from '@angular/common';
 import { environment } from '../../environments/environment';
 import { SnackbarService } from '../shared/snackbar.service';
 import { SidenavService } from '../sidenav/sidenav.service';
-import { open } from 'fs';
 
 @Injectable()
 export class AuthService {
