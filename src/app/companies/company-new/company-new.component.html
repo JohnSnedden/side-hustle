@@ -36,7 +36,10 @@
         <input matInput type="text" [(ngModel)]="newCompany.logo" placeholder="Logo URL">
       </mat-form-field>
   
-      <button mat-raised-button color="primary" (click)="saveCompany(newCompany)">Save</button>
+      <div>
+        <button mat-raised-button color="primary" (click)="saveCompany(newCompany)">Save</button>
+        <button mat-raised-button color="basic" (click)="goBack()">Cancel</button>
+      </div>
   
     </div>
   </mat-card>

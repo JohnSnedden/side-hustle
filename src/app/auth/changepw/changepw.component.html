@@ -1,7 +1,25 @@
-<div class="container">
-  <h3>Change Password</h3>
-  <input [(ngModel)]="oldPassword" type="password" placeholder="Old"/>
-  <input [(ngModel)]="newPassword" type="password" placeholder="New"/>
-  <input (click)="changePassword()" type="submit" value="Change"/>
+<mat-card>
+  <div class="container">
+    <h3>Change Password</h3>
 
-</div>
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="oldPassword" type="password" placeholder="Existing password"/>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="newPassword" type="password" placeholder="New password"/>
+      </mat-form-field>
+    </div>
+    
+    <div>
+      <button mat-raised-button color="primary" (click)="changePassword()">Update</button>
+      <!-- <input (click)="changePassword()" type="submit" value="Change"/> -->
+      <button mat-raised-button color="link" (click)="goBack()">Cancel</button>
+    </div>
+  
+  </div>
+
+</mat-card>

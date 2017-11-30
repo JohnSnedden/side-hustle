@@ -72,7 +72,11 @@
       <input matInput type="text" [(ngModel)]="updatedCompany.logo" placeholder="Logo URL" value="{{updatedCompany.logo}}">
     </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="updateCompany(updatedCompany)">Save</button>
+    <div>
+      <button mat-raised-button color="primary" (click)="updateCompany(updatedCompany)">Save</button>
+      <button mat-raised-button color="basic" (click)="goBack()">Cancel</button>
+    </div>
 
   </div>
 </mat-card>
+

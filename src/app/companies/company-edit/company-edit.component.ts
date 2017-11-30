@@ -48,7 +48,6 @@ export class CompanyEditComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
-    // this.router.navigate(['/companies/']);
   }
 
 }
