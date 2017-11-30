@@ -9,6 +9,8 @@ import { Location } from '@angular/common';
 import { environment } from '../../environments/environment';
 import { SnackbarService } from '../shared/snackbar.service';
 
+// import { NavbarComponent } from '../navbar/navbar.component';
+
 @Injectable()
 export class AuthService {
   user: any;
@@ -18,6 +20,7 @@ export class AuthService {
     private snackbarService: SnackbarService,
     private router: Router,
     private location: Location,
+    // private sidenav: NavbarComponent,
   ) { }
 
   getUserToken() {
@@ -69,6 +72,7 @@ export class AuthService {
           this.user = JSON.parse(response['_body']).user;
           this.snackbarService.showSnackBar('Sign in successful!');
           this.router.navigate(['/home']);
+          // this.sidenav.toggleSidenav();
         },
         err => {
           console.log(err);

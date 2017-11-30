@@ -10,6 +10,9 @@
   <!-- app name -->
   <span routerLink="/home">Side Hustle</span>
 
+  <!-- temp button for testing -->
+  <button mat-raised-button color="primary" (click)="toggleSidenav()">toggle sidenav</button>
+
   <span class="example-fill-remaining-space"></span>
   
   <button mat-icon-button *ngIf="auth.user" [mat-menu-trigger-for]="accountMenu">
@@ -25,7 +28,7 @@
 
 <mat-sidenav-container class="sidenav-container">
     
-        <mat-sidenav mode="side" #sidenav [opened]="true">
+        <mat-sidenav mode="side" #sidenav [opened]="false">
           <div class="sidenav-menu">
             <ul class="sidenav-list">
               <li class="sidenav-list-item" routerLink="/home" (click)="sidenav.close()">
