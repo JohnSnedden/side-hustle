@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   
   <!-- menu button on lhs of toolbar toggles display of sidenav -->
-  <button mat-icon-button *ngIf="auth.user">
+  <button mat-icon-button *ngIf="auth.user" (click)="setSideNavState()">
   <!-- <button mat-icon-button (click)="sidenav.toggle()"> -->
     <mat-icon>menu</mat-icon>
   </button>
@@ -9,6 +9,9 @@
   
   <!-- app name -->
   <span routerLink="/home">Side Hustle</span>
+
+  <!-- temp button for testing -->
+  <!-- <button mat-raised-button color="primary" (click)="setSideNavState()">toggle sidenav</button> -->
 
   <span class="example-fill-remaining-space"></span>
   
@@ -23,3 +26,44 @@
   <button mat-menu-item (click)="signOut()">Sign Out</button>
 </mat-menu>
 
+<!-- <mat-sidenav-container class="sidenav-container">
+    
+        <mat-sidenav mode="side" #sidenav [opened]="false">
+          <div class="sidenav-menu">
+            <ul class="sidenav-list">
+              <li class="sidenav-list-item" routerLink="/home" (click)="sidenav.close()">
+                <i class="material-icons sidenav-list-item-icon">home</i>
+                <span class="sidenav-list-item-text">Home</span>
+              </li>
+              <li class="sidenav-list-item" routerLink="/companies" (click)="sidenav.close()">
+                <i class="material-icons sidenav-list-item-icon">business</i>
+                <span class="sidenav-list-item-text">Companies</span>
+              </li>
+              <li class="sidenav-list-item">
+                <i class="material-icons sidenav-list-item-icon">people</i>
+                <span class="sidenav-list-item-text">Customers</span>
+              </li>
+              <li class="sidenav-list-item">
+                <i class="material-icons sidenav-list-item-icon">book</i>
+                <span class="sidenav-list-item-text">Projects</span>
+              </li>
+              <li class="sidenav-list-item">
+                  <i class="material-icons sidenav-list-item-icon">assignment</i>
+                <span class="sidenav-list-item-text">Quotes</span>
+              </li>
+            </ul>
+            <ul class="sidenav-list">
+              <li class="sidenav-list-item">
+                  <i class="material-icons sidenav-list-item-icon">settings</i>
+                  <span class="sidenav-list-item-text">Settings</span>
+                </li>
+            </ul>
+          </div>
+        </mat-sidenav> -->
+        
+        <!-- area to the right of the sidenav. -->
+        <!-- <div class="example-scrolling-content">
+          <router-outlet></router-outlet>
+        </div>
+    
+      </mat-sidenav-container> -->

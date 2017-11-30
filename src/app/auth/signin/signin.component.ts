@@ -2,12 +2,16 @@ import { Component, OnInit } from '@angular/core';
 // import { FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
+import { SidenavService } from '../../sidenav/sidenav.service';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
+
+  sideNav: Boolean;
 
   // emailFormControl = new FormControl('', [
   //   Validators.required,
@@ -20,10 +24,13 @@ export class SigninComponent implements OnInit {
   user = <any>{};
 
   constructor(
-    public auth: AuthService
+    public auth: AuthService,
+    private sidenavService: SidenavService
   ) { }
 
   ngOnInit() {
+    // this.sidenavService.setSideNavState(closed);
+    console.log('in signin ngoninit');
   }
 
   signIn() {
