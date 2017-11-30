@@ -11,8 +11,10 @@ import { CompaniesRoutingModule } from './companies/companies-routing.module';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
-import { NavbarComponent } from './navbar/navbar.component';
 import { SnackbarService } from './shared/snackbar.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { SidenavService } from './sidenav/sidenav.service';
 
 import { AuthComponent } from './auth/auth.component';
 import { SigninComponent } from './auth/signin/signin.component';
@@ -34,6 +36,7 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     ChangepwComponent,
     HomeComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { HomeComponent } from './home/home.component';
   providers: [
     AuthService,
     SnackbarService,
+    SidenavService,
   ],
   bootstrap: [AppComponent]
 })

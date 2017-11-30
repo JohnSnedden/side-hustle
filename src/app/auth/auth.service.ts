@@ -8,19 +8,21 @@ import { Location } from '@angular/common';
 
 import { environment } from '../../environments/environment';
 import { SnackbarService } from '../shared/snackbar.service';
-
-// import { NavbarComponent } from '../navbar/navbar.component';
+import { SidenavService } from '../sidenav/sidenav.service';
+import { open } from 'fs';
 
 @Injectable()
 export class AuthService {
+
   user: any;
+  sideNav: Boolean;
 
   constructor(
     private http: Http,
-    private snackbarService: SnackbarService,
     private router: Router,
     private location: Location,
-    // private sidenav: NavbarComponent,
+    private snackbarService: SnackbarService,
+    private sidenavService: SidenavService
   ) { }
 
   getUserToken() {
@@ -72,7 +74,7 @@ export class AuthService {
           this.user = JSON.parse(response['_body']).user;
           this.snackbarService.showSnackBar('Sign in successful!');
           this.router.navigate(['/home']);
-          // this.sidenav.toggleSidenav();
+          this.sidenavService.setSideNavState(open);
         },
         err => {
           console.log(err);
@@ -126,6 +128,7 @@ export class AuthService {
           this.user = null;
           this.snackbarService.showSnackBar('Sign out successful');
           this.router.navigate(['/login']);
+          // this.sidenavService.setSideNavState(closed);
         },
         err => {
           console.log(err);
