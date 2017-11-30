@@ -8,5 +8,13 @@
 <app-changepw></app-changepw>
 <hr>
 
-<app-company-index></app-company-index>
+<mat-card>
+    <button mat-raised-button color="primary" routerLink="/">root</button>
+    <button mat-raised-button color="primary" routerLink="/home">Home</button>
+    <button mat-raised-button color="primary" routerLink="/companies/">Companies</button>
+    <!-- <button mat-raised-button color="primary" routerLink="/">Customers</button>
+    <button mat-raised-button color="primary" routerLink="/">Projects</button> -->
+</mat-card>
+
 <hr>
+<router-outlet></router-outlet>

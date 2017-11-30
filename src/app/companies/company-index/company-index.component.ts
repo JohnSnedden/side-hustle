@@ -15,11 +15,7 @@ export class CompanyIndexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.companiesService.getAllCompanies()
-    // .subscribe(response => {
-    //   console.log(response.json());
-    //   this.allCompanies = response.json();
-    // });
+    this.getAllCompanies();
   }
 
   getAllCompanies() {
@@ -27,6 +23,16 @@ export class CompanyIndexComponent implements OnInit {
     .subscribe(response => {
       console.log(response.json());
       this.allCompanies = response.json().companies;
+    });
+  }
+
+  deleteCompany(deletedCompany) {
+    console.log('in deleteCompany ', deletedCompany);
+    this.companiesService.deleteCompany(deletedCompany)
+    .subscribe(response => {
+      const companyIndex = this.allCompanies.indexOf(deletedCompany);
+      // this.allCompanies.splice(companyIndex, 1);
+      this.getAllCompanies();
     });
   }
 

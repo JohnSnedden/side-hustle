@@ -1,8 +1,12 @@
 <mat-card>
   <h2>Companies</h2>
 
-  <a class="btn" routerLink="/companies/new">Add Company</a>
-  <a class="btn" (click)="getAllCompanies()">Get Companies</a>
+  <!-- <a class="btn" routerLink="/companies/new">Add Company</a> -->
+  <button mat-raised-button color="primary" routerLink="/companies/new">Add Company</button>
+  
+  <!-- <button mat-raised-button color="primary" (click)="getAllCompanies()">Get Companies</button> -->
+  
+  <br>
   
   <!-- <div class="companies">
     <div class="row" *ngFor="let company of allCompanies">
@@ -38,8 +42,8 @@
       <mat-icon mat-list-icon>folder</mat-icon>
       <h4 mat-line>{{company.name}}</h4>
       <p mat-line> {{company.city}}, {{company.province}}, {{company.postal_code}} </p>
-      <button mat-raised-button color="primary">edit</button>
-      <!-- <button mat-raised-button color="warn">delete</button> -->
+      <button mat-raised-button color="primary" routerLink="/companies/edit/{{company.id}}">edit</button>
+      <button mat-raised-button color="warn" (click)="deleteCompany(company)">Delete</button>
     </mat-list-item>
   </mat-list>
 </mat-card>

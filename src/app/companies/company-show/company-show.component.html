@@ -1,0 +1,50 @@
+<!-- <mat-card>
+  <div *ngIf="oneCompany">
+    <h2>{{oneCompany.company.name}}</h2>
+    <h3>{{oneCompany.company.address1}}</h3>
+    <h3>{{oneCompany.company.address2}}</h3>
+    <h3>{{oneCompany.company.city}}</h3>
+    <h3>{{oneCompany.company.postal_code}}</h3>
+    <h3>{{oneCompany.company.country}}</h3>
+    <h3>{{oneCompany.company.currency}}</h3>
+    <h3>{{oneCompany.company.logo}}</h3>
+  </div>
+</mat-card> -->
+
+<mat-card>
+  <div *ngIf="oneCompany">
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Company Name" value="{{oneCompany.company.name}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Address Line 1" value="{{oneCompany.company.address1}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Address Line 2" value="{{oneCompany.company.address2}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="City" value="{{oneCompany.company.city}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Zip / Postal Code" value="{{oneCompany.company.postal_code}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Country" value="{{oneCompany.company.country}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Currency" value="{{oneCompany.company.currency}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Logo URL" value="{{oneCompany.company.logo}}">
+    </mat-form-field>
+
+  </div>
+</mat-card>

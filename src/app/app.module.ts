@@ -5,21 +5,23 @@ import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AppRoutingModule } from './app-routing.module';
+import { CompaniesRoutingModule } from './companies/companies-routing.module';
+
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SnackbarService } from './shared/snackbar.service';
+
 import { AuthComponent } from './auth/auth.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { SignoutComponent } from './auth/signout/signout.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ChangepwComponent } from './auth/changepw/changepw.component';
-import { SnackbarService } from './shared/snackbar.service';
-import { CompaniesComponent } from './companies/companies.component';
-import { CompanyIndexComponent } from './companies/company-index/company-index.component';
-import { CompaniesService } from './companies/companies.service';
-import { CompanyEditComponent } from './companies/company-edit/company-edit.component';
 
+import { CompaniesModule } from './companies/companies.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,7 @@ import { CompanyEditComponent } from './companies/company-edit/company-edit.comp
     SignoutComponent,
     SignupComponent,
     ChangepwComponent,
-    CompaniesComponent,
-    CompanyIndexComponent,
-    CompanyEditComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,11 +42,13 @@ import { CompanyEditComponent } from './companies/company-edit/company-edit.comp
     FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    CompaniesRoutingModule,
+    CompaniesModule,
   ],
   providers: [
     AuthService,
     SnackbarService,
-    CompaniesService,
   ],
   bootstrap: [AppComponent]
 })

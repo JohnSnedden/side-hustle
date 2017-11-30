@@ -29,22 +29,31 @@ export class CompaniesService {
   }
 
   getOneCompany(companyId) {
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()};
     console.log(companyId);
-    return this.http.get(environment.apiServer + `/companies/${companyId}`);
+    return this.http.get(environment.apiServer + `/companies/${companyId}`, config);
   }
 
   deleteCompany(company) {
     console.log(company.id);
-    return this.http.delete(environment.apiServer + `/companies/${company.id}`);
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()};
+    return this.http.delete(environment.apiServer + `/companies/${company.id}`, config);
   }
 
   saveCompany(newCompany) {
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()};
     console.log(newCompany);
-    return this.http.post(environment.apiServer + `/companies`, newCompany);
+    return this.http.post(environment.apiServer + `/companies`, newCompany, config);
   }
 
   updateCompany(updatedCompany) {
-    return this.http.put(environment.apiServer + `/companies/${updatedCompany.id}`, updatedCompany);
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()};
+    console.log('in updCompany', updatedCompany);
+    return this.http.put(environment.apiServer + `/companies/${updatedCompany.company.id}`, updatedCompany, config);
   }
 
 }
