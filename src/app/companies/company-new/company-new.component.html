@@ -1,3 +1,43 @@
-<p>
-  company-new works!
-</p>
+<mat-card>
+    <div class="container">
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.name" placeholder="Company Name">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.address1" placeholder="Address Line 1">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.address2" placeholder="Address Line 2">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.city" placeholder="City">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.postal_code" placeholder="Zip / Postal Code">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.province" placeholder="State / Province">
+      </mat-form-field>
+        
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.country" placeholder="Country">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.currency" placeholder="Currency">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newCompany.logo" placeholder="Logo URL">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="saveCompany(newCompany)">Save</button>
+  
+    </div>
+  </mat-card>
+  

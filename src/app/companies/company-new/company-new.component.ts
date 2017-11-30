@@ -26,7 +26,7 @@ export class CompanyNewComponent implements OnInit {
       .subscribe(response => {
         console.log(response.json());
         const company = response.json();
-        this.router.navigate(['/companies/' + company.id]);
+        this.router.navigate(['/companies/' + company.company.id]);
       });
     }
 

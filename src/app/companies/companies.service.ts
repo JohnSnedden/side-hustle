@@ -42,18 +42,29 @@ export class CompaniesService {
     return this.http.delete(environment.apiServer + `/companies/${company.id}`, config);
   }
 
-  saveCompany(newCompany) {
+  saveCompany(company) {
+    const newCompany = {
+      company
+    };
+    console.log(newCompany);
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.getUserToken()};
-    console.log(newCompany);
     return this.http.post(environment.apiServer + `/companies`, newCompany, config);
   }
 
-  updateCompany(updatedCompany) {
+  updateCompany(company) {
+    const updCompany = {
+      company
+    };
+    console.log('inUpdComp, company is ', company);
+    console.log('inUpdComp, updCompany is ', updCompany);
+
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.getUserToken()};
-    console.log('in updCompany', updatedCompany);
-    return this.http.put(environment.apiServer + `/companies/${updatedCompany.company.id}`, updatedCompany, config);
+
+    console.log('in updCompany', updCompany);
+
+    return this.http.put(environment.apiServer + `/companies/${updCompany.company.id}`, updCompany, config);
   }
 
 }

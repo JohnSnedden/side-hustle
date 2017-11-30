@@ -37,35 +37,39 @@
 <mat-card>
   <div class="container">
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.name" placeholder="Company Name">
+      <input matInput type="text" [(ngModel)]="updatedCompany.name" placeholder="Company Name" value="{{updatedCompany.name}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.address1" placeholder="Address Line 1">
+      <input matInput type="text" [(ngModel)]="updatedCompany.address1" placeholder="Address Line 1" value="{{updatedCompany.address1}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.address2" placeholder="Address Line 2">
+      <input matInput type="text" [(ngModel)]="updatedCompany.address2" placeholder="Address Line 2" value="{{updatedCompany.address2}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.city" placeholder="City">
+      <input matInput type="text" [(ngModel)]="updatedCompany.city" placeholder="City" value="{{updatedCompany.city}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.postal_code" placeholder="Zip / Postal Code">
+      <input matInput type="text" [(ngModel)]="updatedCompany.postal_code" placeholder="Zip / Postal Code" value="{{updatedCompany.postal_code}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.country" placeholder="Country">
+      <input matInput type="text" [(ngModel)]="updatedCompany.province" placeholder="State / Province" value="{{updatedCompany.province}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.currency" placeholder="Currency">
+      <input matInput type="text" [(ngModel)]="updatedCompany.country" placeholder="Country" value="{{updatedCompany.country}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" [(ngModel)]="updatedCompany.logo" placeholder="Logo URL">
+      <input matInput type="text" [(ngModel)]="updatedCompany.currency" placeholder="Currency" value="{{updatedCompany.currency}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCompany.logo" placeholder="Logo URL" value="{{updatedCompany.logo}}">
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="updateCompany(updatedCompany)">Save</button>
