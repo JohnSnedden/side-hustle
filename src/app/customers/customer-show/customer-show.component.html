@@ -2,35 +2,43 @@
   <div *ngIf="oneCustomer">
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="Customer Name" value="{{oneCustomer.company.name}}">
+      <input matInput readonly="true" placeholder="CustomerID" value="{{oneCustomer.customer.id}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="Address Line 1" value="{{oneCustomer.company.address1}}">
+      <input matInput readonly="true" placeholder="Company ID" value="{{oneCustomer.customer.company_id}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="Address Line 2" value="{{oneCustomer.company.address2}}">
+      <input matInput readonly="true" placeholder="Customer Name" value="{{oneCustomer.customer.name}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="City" value="{{oneCustomer.company.city}}">
+      <input matInput readonly="true" placeholder="Address Line 1" value="{{oneCustomer.customer.address1}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="Zip / Postal Code" value="{{oneCustomer.company.postal_code}}">
+      <input matInput readonly="true" placeholder="Address Line 2" value="{{oneCustomer.customer.address2}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="Country" value="{{oneCustomer.company.country}}">
+      <input matInput readonly="true" placeholder="City" value="{{oneCustomer.customer.city}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="Currency" value="{{oneCustomer.company.currency}}">
+      <input matInput readonly="true" placeholder="Zip / Postal Code" value="{{oneCustomer.customer.postal_code}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput readonly="true" placeholder="Email" value="{{oneCustomer.company.email}}">
+      <input matInput readonly="true" placeholder="Country" value="{{oneCustomer.customer.country}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Currency" value="{{oneCustomer.customer.currency}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput readonly="true" placeholder="Email" value="{{oneCustomer.customer.email}}">
     </mat-form-field>
 
   </div>
