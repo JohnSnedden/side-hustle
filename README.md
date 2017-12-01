@@ -1,27 +1,55 @@
 # SideHustle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+This repo project is a web client for a simple Point of Sale (POS) system. A second repo exists for a corresponding backend database and API
 
-## Development server
+## Background
+This is my second project as part of the General Assembly Web Development Immersive program.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+We were given the freedom to choose what to develop.
 
-## Code scaffolding
+I chose to develop a lightweight quoting tool for freelance workers to quote potential customers.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Wireframes
+Initial low-res hand sketch client wireframes and storyboard are located here
+https://photos.app.goo.gl/YzO9HqYewAfsUbIt2
 
-## Build
+## User Stories
+I utilized a Trello board https://trello.com/b/Q5Jj1zlN/wdi-project-4-fe-framework to keep track of my user stories, progress, and bugs/issues during initial development. After initial development is complete I will switch to using the GitHub repo issues list for ongoing issue management.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Built With
+Angular v5.0.3
+Angular Material
 
-## Running unit tests
+## Supported Functionality
+Currently the app client allows the following functionality
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Users
+- Sign-up (create a user)
+- Sign-in
+- Change password
+- Sign-out
 
-## Running end-to-end tests
+Companies
+- Create an company
+- Update an company
+- Delete an company
+- List all companies
+- Display an individual company
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Customers
+- Create a customer
+- Update a customer
+- Delete a customer
+- List all customers
 
-## Further help
+## Deployed sites
+The app and api are currently deployed here:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+api https://side-hustle.herokuapp.com/ 
+app https://johnsnedden.github.io/side-hustle/
+
+## Unsolved Problems
+Where do I start?
+
+## Future Development
+There is a lot of scope for building out this product. Projects and Estimates need to be added, then there is always the option of tracking the time worked on the projects. That could also open the possibility to billing.
