@@ -9,36 +9,6 @@ import { SignupComponent } from './signup/signup.component';
 import { ChangepwComponent } from './changepw/changepw.component';
 
 const authRoutes: Routes = [
-//   {
-//       path: '',
-//       component: AuthComponent,
-//       children: [ // create the sub sections (children) for this route
-//           {
-//               path: '',
-//               component: SigninComponent
-//           },
-//           {
-//               path: 'login',
-//               component: SigninComponent
-//           },
-//           {
-//               path: 'signin',
-//               component: SigninComponent
-//           },
-//           {
-//               path: 'signup',
-//               component: SignupComponent
-//           },
-//           {
-//               path: 'changepw',
-//               component: ChangepwComponent
-//           },
-//           {
-//               path: 'signout',
-//               component: SignoutComponent
-//           }
-//       ]
-//   }
 ];
 
 @NgModule({
