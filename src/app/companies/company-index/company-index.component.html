@@ -3,15 +3,12 @@
 
   <button mat-raised-button color="primary" routerLink="/companies/new">Add Company</button>
   
-  <!-- <button mat-raised-button color="primary" (click)="getAllCompanies()">Get Companies</button> -->
-  
 </mat-card>
 
 <br>
 
 <mat-card>
   <mat-list>
-    <!-- <h3 mat-subheader>Companies</h3> -->
 
     <mat-list-item *ngFor="let company of allCompanies">
 
@@ -21,12 +18,12 @@
       <p mat-line> {{company.city}} {{company.province}} {{company.postal_code}}</p>
       <p mat-line>id: {{company.id}}</p>
       
-      <!-- individual edit / delete buttons -->
+      <!-- OPTION # 1 - individual edit / delete buttons -->
       <button mat-raised-button color="primary" routerLink="/companies/edit/{{company.id}}"><i class="material-icons">edit</i></button>
        
       <button mat-raised-button color="warn" (click)="deleteCompany(company)"><i class="material-icons">delete</i></button>
 
-      <!-- menu button with view / edit / delete options -->
+      <!-- OPTION # 2 - menu button with view / edit / delete options -->
       <!-- <button mat-icon-button [matMenuTriggerFor]="indexMenu">
         <mat-icon>more_vert</mat-icon>
       </button>

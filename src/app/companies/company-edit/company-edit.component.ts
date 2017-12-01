@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router/';
 import { Location } from '@angular/common';
 
+import { SnackbarService } from '../../shared/snackbar.service';
 import { CompaniesService } from '../companies.service';
 
 @Component({
@@ -11,38 +12,39 @@ import { CompaniesService } from '../companies.service';
 })
 export class CompanyEditComponent implements OnInit {
 
-  // currentCompany = <any>{};
   updatedCompany = <any>{};
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
+    private snackbarService: SnackbarService,
     private companiesService: CompaniesService
   ) { }
 
   ngOnInit() {
-    console.log('in comp-edit ngOnInit, this.route.params is', this.route.params);
     this.route.params.forEach( param => {
-      console.log('in comp-edit ngOnInit, param.id is', param.id);
       this.companiesService.getOneCompany(param.id)
-      .subscribe(response => {
-        console.log('getOneCompany response.json() is ', response.json());
-        console.log('getOneCompany response.json().company is ', response.json().company);
+      .subscribe(
+        response => {
         this.updatedCompany = response.json().company;
+      },
+      err => {
+        this.snackbarService.showSnackBar('Error getting company data :(');
       });
     });
   }
 
   updateCompany(updatedCompany) {
-    console.log('updating company yo!');
-    console.log('in edit.c updateCompany, updatedCompany is ', updatedCompany);
     this.companiesService.updateCompany(updatedCompany)
-    .subscribe(response => {
-      // console.log('in updComp, updatedCompany.company.id is ', updatedCompany.company.id);
-      console.log('in updComp, updatedCompany.id is ', updatedCompany.id);
+    .subscribe(
+      response => {
       const company = response.json();
       this.router.navigate(['/companies/' + updatedCompany.id]);
+      this.snackbarService.showSnackBar('Company updated!');
+    },
+    err => {
+      this.snackbarService.showSnackBar('Error updateing company :(');
     });
   }
 

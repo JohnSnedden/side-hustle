@@ -9,7 +9,6 @@ import { Location } from '@angular/common';
 import { environment } from '../../environments/environment';
 import { SnackbarService } from '../shared/snackbar.service';
 import { SidenavService } from '../sidenav/sidenav.service';
-// import { SidenavComponent } from '../sidenav/sidenav.component';
 
 @Injectable()
 export class AuthService {
@@ -23,7 +22,6 @@ export class AuthService {
     private location: Location,
     private snackbarService: SnackbarService,
     private sidenavService: SidenavService,
-    // public sidenavComponent: SidenavComponent
   ) { }
 
   getUserToken() {
