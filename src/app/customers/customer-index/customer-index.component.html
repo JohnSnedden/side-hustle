@@ -1,0 +1,48 @@
+<mat-card>
+  <h3>Customers</h3>
+
+  <button mat-raised-button color="primary" routerLink="/customers/new">Add Customer</button>
+  
+</mat-card>
+
+<br>
+
+<mat-card>
+  <mat-list>
+
+    <mat-list-item *ngFor="let customer of allCustomers">
+
+      <mat-icon mat-list-icon>business</mat-icon>
+      
+      <h4 mat-line>{{customer.name}}</h4>
+      <p mat-line> {{customer.city}} {{customer.province}} {{customer.postal_code}}</p>
+      <p mat-line>id: {{customer.id}}</p>
+      
+      <!-- OPTION # 1 - individual edit / delete buttons -->
+      <button mat-raised-button color="primary" routerLink="/customers/edit/{{customer.id}}"><i class="material-icons">edit</i></button>
+       
+      <button mat-raised-button color="warn" (click)="deleteCustomer(customer)"><i class="material-icons">delete</i></button>
+
+      <!-- OPTION # 2 - menu button with view / edit / delete options -->
+      <!-- <button mat-icon-button [matMenuTriggerFor]="indexMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #indexMenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Display</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu> -->
+
+    </mat-list-item>
+  </mat-list>
+</mat-card>
