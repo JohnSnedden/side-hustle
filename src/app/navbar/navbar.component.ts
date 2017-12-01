@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
 
+import { AuthService } from '../auth/auth.service';
 import { SidenavService } from '../sidenav/sidenav.service';
 
 @Component({
@@ -10,24 +10,23 @@ import { SidenavService } from '../sidenav/sidenav.service';
 })
 export class NavbarComponent implements OnInit {
 
-  sideNav: Boolean;
-
   constructor(
     public auth: AuthService,
     private sidenavService: SidenavService
   ) { }
 
   ngOnInit() {
-    // this.sidenavService.setSideNavState(closed);
-  }
 
-  setSideNavState() {
-    this.sideNav = !this.sideNav;
-    this.sidenavService.setSideNavState(this.sideNav);
   }
 
   signOut() {
     this.auth.signOut();
+  }
+
+  toggleSidenav() {
+    this.sidenavService
+      .toggle()
+      .then(() => { });
   }
 
 }

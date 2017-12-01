@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 import { SidenavService } from '../sidenav/sidenav.service';
 
@@ -7,29 +8,20 @@ import { SidenavService } from '../sidenav/sidenav.service';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
+
 export class SidenavComponent implements OnInit {
 
-  sidenavState: any = false;
-  sideNav: Boolean;
+  @ViewChild('sidenav') public sidenav: MatSidenav;
 
-    constructor(
-       public mediator: SidenavService,
-       private sidenavService: SidenavService
-    ) { }
+  constructor(
+      private sidenavService: SidenavService
+  ) { }
 
-    ngOnInit() {
+  ngOnInit() {
 
-      // this.sidenavState = 'closed'
-
-      // this.sidenavService.setSideNavState(closed);
-
-      this.sidenavState = this.mediator.getSideNavState();
-      console.log(this.sidenavState);
-
+    // store sidenav to service
+    this.sidenavService
+    .setSidenav(this.sidenav);
     }
 
-    setSideNavState() {
-      this.sideNav = !this.sideNav;
-      this.sidenavService.setSideNavState(this.sideNav);
-    }
 }

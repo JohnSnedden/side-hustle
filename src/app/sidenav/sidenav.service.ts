@@ -1,21 +1,31 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Injectable()
 export class SidenavService {
 
-  // SideNav: Boolean = true;
-  sideNav: any = false;
-  sideNavUpdated = new EventEmitter();
+  private sidenav: MatSidenav;
+
+  //  Setter for sidenav.
+  public setSidenav(sidenav: MatSidenav) {
+    this.sidenav = sidenav;
+  }
 
   constructor() { }
 
-  getSideNavState() {
-    return this.sideNavUpdated;
+  // Open this sidenav
+  public open() {
+    return this.sidenav.open();
   }
 
-  setSideNavState (state) {
-    this.sideNav = state;
-    this.sideNavUpdated.emit(this.sideNav);
+  // Close this sidenav
+  public close() {
+    return this.sidenav.close();
+  }
+
+  // Toggle this sidenav
+  public toggle(isOpen?: boolean) {
+    return this.sidenav.toggle(isOpen);
   }
 
 }

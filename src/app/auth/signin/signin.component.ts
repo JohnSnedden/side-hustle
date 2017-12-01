@@ -30,14 +30,16 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
     // this.sidenavService.setSideNavState(closed);
-    console.log('in signin ngoninit');
+    // console.log('in signin.c ngOnInit sidenavService.sideNav = ', this.sidenavService.sideNav);
+    // console.log('in signin.c ngOnInit sidenavService.sideNavUpdated = ', this.sidenavService.sideNavUpdated);
   }
 
   signIn() {
     this.auth.signIn(this.user.email, this.user.password);
-    console.log('in login.comp signIn, this.user is ', this.user);
-    // console.log('in signIn, token is ', this.getUserToken());
+    // console.log('in login.comp signIn, this.user is ', this.user);
     this.user.email = this.user.password = '';
+    // console.log('in signin.c signIn sidenavService.sideNav = ', this.sidenavService.sideNav);
+    // console.log('in signin.c signIn sidenavService.sideNavUpdated = ', this.sidenavService.sideNavUpdated);
   }
 
 }
