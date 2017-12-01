@@ -1,6 +1,11 @@
 # SideHustle
 
 This repo project is a web client for a simple Point of Sale (POS) system. A second repo exists for a corresponding backend database and API
+https://github.com/JohnSnedden/side-hustle-api
+
+## Deployed sites:
+https://johnsnedden.github.io/side-hustle/
+https://side-hustle.herokuapp.com/
 
 ## Background
 This is my second project as part of the General Assembly Web Development Immersive program.
@@ -21,6 +26,7 @@ Angular v5.0.3
 Angular Material
 
 ## Supported Functionality
+![image](https://user-images.githubusercontent.com/11476221/33477610-3fb2c764-d654-11e7-84cd-cd2323fde166.png)
 Currently the app client allows the following functionality
 
 Users
