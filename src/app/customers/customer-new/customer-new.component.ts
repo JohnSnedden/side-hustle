@@ -34,7 +34,6 @@ export class CustomerNewComponent implements OnInit {
         .subscribe(
           response => {
             const userCompanies = response.json().companies;
-            console.log('userCompanies is ', userCompanies);
             this.companies = userCompanies;
           },
           err => {
