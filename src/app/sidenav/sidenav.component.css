@@ -70,3 +70,7 @@ mat-sidenav {
   
   /* SIDENAV END */
   
+  .main-outlet {
+    padding: 20px;
+  }
+  
