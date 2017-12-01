@@ -1,0 +1,46 @@
+<mat-card>
+  <div class="container">
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.name" placeholder="Customer Name" value="{{updatedCustomer.name}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.address1" placeholder="Address Line 1" value="{{updatedCustomer.address1}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.address2" placeholder="Address Line 2" value="{{updatedCustomer.address2}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.city" placeholder="City" value="{{updatedCustomer.city}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.postal_code" placeholder="Zip / Postal Code" value="{{updatedCustomer.postal_code}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.province" placeholder="State / Province" value="{{updatedCustomer.province}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.country" placeholder="Country" value="{{updatedCustomer.country}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.currency" placeholder="Currency" value="{{updatedCustomer.currency}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="updatedCustomer.email" placeholder="Logo URL" value="{{updatedCustomer.email}}">
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button color="primary" (click)="updateCustomer(updatedCustomer)">Save</button>
+      <button mat-raised-button color="basic" (click)="goBack()">Cancel</button>
+    </div>
+
+  </div>
+</mat-card>
+

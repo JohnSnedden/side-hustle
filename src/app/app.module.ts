@@ -23,8 +23,10 @@ import { SignoutComponent } from './auth/signout/signout.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ChangepwComponent } from './auth/changepw/changepw.component';
 
-import { CompaniesModule } from './companies/companies.module';
 import { HomeComponent } from './home/home.component';
+import { CompaniesModule } from './companies/companies.module';
+import { CustomersModule } from './customers/customers.module';
+import { CustomersRoutingModule } from './customers/customers-routing.module';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     AuthRoutingModule,
     CompaniesRoutingModule,
+    CustomersRoutingModule,
     CompaniesModule,
+    CustomersModule,
   ],
   providers: [
     AuthService,
