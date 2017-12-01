@@ -71,7 +71,6 @@ export class AuthService {
           this.signIn(credentials.credentials.email, credentials.credentials.password);
         },
         err => {
-          console.log(err);
           this.snackbarService.showSnackBar('Sign up error');
         }
       );
@@ -98,11 +97,9 @@ export class AuthService {
           this.sidenavService.open();
         },
         err => {
-          console.log(err);
           this.snackbarService.showSnackBar('Sign in error');
         }
       );
-      // console.log('in auth.services signIn ', this.user);
   }
 
   changePassword(oldPassword: string, newPassword: string) {
@@ -124,12 +121,10 @@ export class AuthService {
     this.http.patch(environment.apiServer + '/change-password/' + this.user.id, passwords, config)
       .subscribe(
         data => {
-          console.log('Success');
           this.snackbarService.showSnackBar('Password changed!');
           this.location.back();
         },
         err => {
-          console.log(err);
           this.snackbarService.showSnackBar('Error changing password');
         }
       );
@@ -152,7 +147,6 @@ export class AuthService {
           this.sidenavService.close();
         },
         err => {
-          console.log(err);
           this.snackbarService.showSnackBar('Sign out error');
         }
       );
