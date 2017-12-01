@@ -1,14 +1,16 @@
 <mat-sidenav-container class="sidenav-container">
   
   <!-- sidenav content -->
-  <mat-sidenav mode="side" #sidenav opened="{{sidenavState | async }}">
+  <!-- <mat-sidenav mode="side" #sidenav opened="false"> -->
+  <mat-sidenav mode="side" #sidenav opened='false'>
+  <!-- <mat-sidenav mode="side" #sidenav opened="{{sidenavState | async }}"> -->
     <div class="sidenav-menu">
       <ul class="sidenav-list">
-        <li class="sidenav-list-item" routerLink="/home" (click)="setSideNavState()">
+        <li class="sidenav-list-item" routerLink="/home">
           <i class="material-icons sidenav-list-item-icon">home</i>
           <span class="sidenav-list-item-text">Home</span>
         </li>
-        <li class="sidenav-list-item" routerLink="/companies" (click)="setSideNavState()">
+        <li class="sidenav-list-item" routerLink="/companies">
           <i class="material-icons sidenav-list-item-icon">business</i>
           <span class="sidenav-list-item-text">Companies</span>
         </li>

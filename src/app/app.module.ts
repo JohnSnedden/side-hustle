@@ -55,6 +55,7 @@ import { HomeComponent } from './home/home.component';
     AuthService,
     SnackbarService,
     SidenavService,
+    SidenavComponent,
   ],
   bootstrap: [AppComponent]
 })

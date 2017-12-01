@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
 import { environment } from '../../environments/environment';
 import { SnackbarService } from '../shared/snackbar.service';
 import { SidenavService } from '../sidenav/sidenav.service';
+// import { SidenavComponent } from '../sidenav/sidenav.component';
 
 @Injectable()
 export class AuthService {
@@ -21,7 +22,8 @@ export class AuthService {
     private router: Router,
     private location: Location,
     private snackbarService: SnackbarService,
-    private sidenavService: SidenavService
+    private sidenavService: SidenavService,
+    // public sidenavComponent: SidenavComponent
   ) { }
 
   getUserToken() {
@@ -30,6 +32,27 @@ export class AuthService {
 
   getUser() {
     return this.user;
+  }
+
+  // toggle sidenav
+  toggleSidenav() {
+    this.sidenavService
+      .toggle()
+      .then(() => { });
+  }
+
+  // open sidenav
+  openSidenav() {
+    this.sidenavService
+      .open()
+      .then(() => { });
+  }
+
+  // close sidenav
+  closeSidenav() {
+    this.sidenavService
+      .close()
+      .then(() => { });
   }
 
   signUp(email: string, password: string, password_confirmation: string) {
@@ -73,14 +96,15 @@ export class AuthService {
           this.user = JSON.parse(response['_body']).user;
           this.snackbarService.showSnackBar('Sign in successful!');
           this.router.navigate(['/home']);
-          this.sidenavService.setSideNavState(open);
+          // this.sidenavComponent.showSidenav = true;
+          this.sidenavService.open();
         },
         err => {
           console.log(err);
           this.snackbarService.showSnackBar('Sign in error');
         }
       );
-      console.log('in auth.services signIn ', this.user);
+      // console.log('in auth.services signIn ', this.user);
   }
 
   changePassword(oldPassword: string, newPassword: string) {
@@ -127,7 +151,7 @@ export class AuthService {
           this.user = null;
           this.snackbarService.showSnackBar('Sign out successful');
           this.router.navigate(['/login']);
-          // this.sidenavService.setSideNavState(closed);
+          this.sidenavService.close();
         },
         err => {
           console.log(err);
